@@ -127,11 +127,27 @@ p.lede{font-size:18px;color:var(--ink-2);line-height:1.65;max-width:620px}
 .next-link .k{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3)}
 .next-link .v{font-size:24px;font-weight:700;margin-top:6px}
 
+/* mobile nav toggle + backdrop (hidden on desktop) */
+.nav-toggle{display:none}
+.nav-backdrop{display:none}
+
 @media(max-width:980px){
-.side{display:none}
-.page{margin-left:0;padding:0 24px 100px}
+.side{position:fixed;transform:translateX(-100%);transition:transform .25s ease;z-index:250;box-shadow:0 0 40px rgba(23,22,15,.18)}
+.side.open{transform:translateX(0)}
+.nav-toggle{display:flex;position:fixed;top:18px;left:18px;z-index:300;width:42px;height:42px;align-items:center;justify-content:center;gap:4px;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:8px;cursor:pointer;padding:0}
+.nav-toggle span{display:block;width:18px;height:2px;background:var(--ink);transition:transform .2s ease,opacity .2s ease}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.nav-backdrop.open{display:block;position:fixed;inset:0;background:rgba(23,22,15,.35);z-index:200}
+.page{margin-left:0;padding:76px 24px 100px}
 .project-entry{grid-template-columns:1fr}
 .diagram{flex-direction:column}
 .d-arrow{transform:rotate(90deg);padding:6px 0}
 .tension{flex-direction:column;gap:10px}
+}
+
+@media (prefers-reduced-motion: reduce){
+.side{transition:none}
+.nav-toggle span{transition:none}
 }
