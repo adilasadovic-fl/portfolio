@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #faf8f4;
+  --color-paper-sunk: #f2efe8;
+  --color-ink: #14140f;
+  --color-ink-soft: #3d3d36;
+  --color-ink-muted: #6d6d63;
+  --color-ink-faint: #9a9a90;
+  --color-rule: #e0ddd3;
+  --color-rule-strong: #cfcbbe;
+  --color-accent: #2340e0;
+  --color-night: #131311;
+  --color-night-rule: #2e2e29;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-plex), ui-monospace, monospace;
+
+  --text-display: clamp(2.75rem, 1.4rem + 5.6vw, 6rem);
+  --text-display--line-height: 0.98;
+  --text-display--letter-spacing: -0.035em;
+
+  --text-title: clamp(2.125rem, 1.3rem + 3.4vw, 4rem);
+  --text-title--line-height: 1.02;
+  --text-title--letter-spacing: -0.03em;
+
+  --text-section: clamp(1.5rem, 1.1rem + 1.6vw, 2.25rem);
+  --text-section--line-height: 1.1;
+  --text-section--letter-spacing: -0.022em;
+
+  --text-sub: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+  --text-sub--line-height: 1.25;
+  --text-sub--letter-spacing: -0.015em;
+
+  --text-lead: clamp(1.1875rem, 1.05rem + 0.7vw, 1.625rem);
+  --text-lead--line-height: 1.42;
+  --text-lead--letter-spacing: -0.012em;
+
+  --text-body: clamp(1rem, 0.97rem + 0.16vw, 1.0625rem);
+  --text-body--line-height: 1.62;
+
+  --text-meta: 0.75rem;
+  --text-meta--line-height: 1.5;
+  --text-meta--letter-spacing: 0.09em;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-accent) 18%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@utility label {
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  line-height: var(--text-meta--line-height);
+  letter-spacing: var(--text-meta--letter-spacing);
+  text-transform: uppercase;
+}
+
+@utility measure {
+  max-width: 34rem;
+}
+
+@utility measure-wide {
+  max-width: 44rem;
+}
+
+/* Entrance reveal — opt-in, disabled under reduced motion by the rule above. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@utility reveal {
+  animation: rise 0.5s cubic-bezier(0.2, 0.6, 0.2, 1) both;
+}
