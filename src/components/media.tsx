@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { Figure as FigureData } from "@/content/types";
 
 function surface(theme: FigureData["theme"]) {
@@ -20,13 +20,36 @@ export function Figure({
   sizes?: string;
 }) {
   const [zoomed, setZoomed] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
 
-  const close = useCallback(() => setZoomed(false), []);
+  const close = useCallback(() => {
+    setZoomed(false);
+    triggerRef.current?.focus();
+  }, []);
 
   useEffect(() => {
     if (!zoomed) return;
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") close();
+      if (event.key === "Escape") {
+        close();
+        return;
+      }
+      if (event.key !== "Tab") return;
+
+      const focusable = dialogRef.current?.querySelectorAll<HTMLElement>(
+        "button, [href], [tabindex]:not([tabindex='-1'])",
+      );
+      if (!focusable || focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     };
     document.addEventListener("keydown", onKeyDown);
     document.body.style.overflow = "hidden";
@@ -53,6 +76,7 @@ export function Figure({
       {figure.zoomable ? (
         <button
           type="button"
+          ref={triggerRef}
           onClick={() => setZoomed(true)}
           className={`group block w-full cursor-zoom-in border ${surface(figure.theme)}`}
           aria-label={`Enlarge diagram: ${figure.alt.slice(0, 80)}`}
@@ -74,29 +98,31 @@ export function Figure({
 
       {zoomed ? (
         <div
+          ref={dialogRef}
           role="dialog"
           aria-modal="true"
           aria-label="Enlarged diagram"
           className="fixed inset-0 z-50 flex flex-col bg-night/95 p-4 sm:p-8"
         >
-          <div className="flex justify-end">
+          <div className="flex items-baseline justify-between gap-4">
+            <p className="label text-[#9b998f] sm:hidden">Scroll to pan</p>
             <button
               type="button"
               onClick={close}
               autoFocus
-              className="label px-3 py-2 text-paper hover:text-white"
+              className="label ml-auto px-3 py-2 text-paper hover:text-white"
             >
               Close ✕
             </button>
           </div>
-          <div className="flex min-h-0 flex-1 items-center justify-center overflow-auto">
+          <div className="flex min-h-0 flex-1 items-center overflow-auto sm:justify-center">
             <Image
               src={figure.src}
               alt={figure.alt}
               width={figure.width}
               height={figure.height}
-              sizes="100vw"
-              className="h-auto w-full max-w-[1600px]"
+              sizes="(min-width: 640px) 100vw, 250vw"
+              className="h-auto w-[250vw] max-w-none sm:w-full sm:max-w-[1600px]"
             />
           </div>
         </div>
