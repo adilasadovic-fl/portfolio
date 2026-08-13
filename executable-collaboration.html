@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executable Collaboration — Adila Sadovic</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="shell">
+<aside class="side">
+  <div class="side-id"><div class="nm">Adila Sadovic</div><div class="rl">Product Designer</div></div>
+  <nav class="side-nav">
+    <a href="index.html">Home</a>
+    <div class="grp">Case Studies</div>
+    <a href="security-mode.html">Security Mode</a>
+    <a href="executable-collaboration.html" class="active">Executable Collaboration</a>
+    <a href="aws-quick-setup.html">AWS Quick Setup</a>
+    <div class="grp">More</div>
+    <a href="additional-work.html">Additional Work</a>
+  </nav>
+  <div class="side-foot">
+    <a href="mailto:adila.sadovic@gmail.com">adila.sadovic@gmail.com</a>
+    <a href="tel:+491722667345">+49 172 2667345</a>
+  </div>
+</aside>
+<main class="page">
+
+  <section class="chapter hero-block">
+    <div class="eyebrow">Case Study</div>
+    <h1 class="hero-title">Executable Collaboration</h1>
+    <p class="lede">A code-based framework for design × engineering.</p>
+    <div class="meta-row">
+      <div class="meta-item"><div class="k">Company</div><div class="v">Miro</div></div>
+      <div class="meta-item"><div class="k">Role</div><div class="v">Framework Designer</div></div>
+      <div class="meta-item"><div class="k">Scope</div><div class="v">Content Security design × engineering team</div></div>
+      <div class="meta-item"><div class="k">Status</div><div class="v">Active practice · piloting with additional teams</div></div>
+    </div>
+  </section>
+
+  <section class="chapter col body-text">
+    <h2 class="sec-h">The problem</h2>
+    <p>Design and engineering were working on the same product, but not in the same system. Design lived in mockups. Feasibility discussions happened somewhere else. Changes were announced in Slack. Documentation decayed. Engineers regularly had to determine which artifact represented the latest intent.</p>
+    <p>I started questioning whether this was really a communication problem. <strong>What if the underlying problem was the artifact itself?</strong></p>
+  </section>
+
+  <section class="chapter full">
+    <h3 class="sub-h">Before</h3>
+    <div class="diagram">
+      <div class="d-node">Design tool</div><div class="d-arrow">→</div>
+      <div class="d-node">Handoff / spec</div><div class="d-arrow">→</div>
+      <div class="d-node">Slack clarification</div><div class="d-arrow">→</div>
+      <div class="d-node">Engineer interpretation</div><div class="d-arrow">→</div>
+      <div class="d-node">Implementation</div><div class="d-arrow">→</div>
+      <div class="d-node">Design becomes stale</div>
+    </div>
+    <h3 class="sub-h" style="margin-top:36px">After</h3>
+    <div class="diagram">
+      <div class="d-node">Design intent</div><div class="d-arrow">→</div>
+      <div class="d-node">AI-assisted executable prototype</div><div class="d-arrow">→</div>
+      <div class="d-node">Git / version control</div><div class="d-arrow">→</div>
+      <div class="d-node">Pull request</div><div class="d-arrow">→</div>
+      <div class="d-node">Live preview</div><div class="d-arrow">→</div>
+      <div class="d-node">Design + engineering review</div><div class="d-arrow">→</div>
+      <div class="d-node">Merge</div><div class="d-arrow">→</div>
+      <div class="d-node">Automated communication</div>
+    </div>
+  </section>
+
+  <section class="chapter col body-text">
+    <h2 class="sec-h">The problem had been there for years</h2>
+    <p>This wasn't an AI problem. An internal engineering study in 2022 surfaced three recurring frustrations with design collaboration: feasibility discussions happened too late, mockups became outdated, and documentation was incomplete.</p>
+    <p>Three years later, a workshop across design and engineering produced almost the same signal. The strongest pain point was unclear source of truth, followed by low visibility into design changes, design-system misalignment, communication overhead and missing changelogs.</p>
+    <p>Across both research moments, five problems kept resurfacing: <strong>source of truth</strong> — where does the latest product intent actually live; <strong>feasibility</strong> — when does engineering have enough access to challenge technical assumptions; <strong>documentation</strong> — why are teams manually documenting information already implicit in the work; <strong>design-system drift</strong> — how do prototypes stay aligned with the components engineers actually ship; and <strong>visibility</strong> — how does engineering know what changed without designers repeatedly broadcasting it.</p>
+    <p>Different teams. Different years. Different tools. Same structural problems.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="pullquote">Static design artifacts make collaboration problems inevitable because the artifact cannot participate in the engineering system around it.</div>
+  </section>
+
+  <section class="chapter col body-text">
+    <h2 class="sec-h">The system</h2>
+    <p>The framework is built around one shift: from a representation of the product to a running version of the product. A designer uses an AI-assisted development environment to build the interaction directly with production design-system components. That prototype enters version control. From there it behaves much more like engineering work.</p>
+  </section>
+
+  <section class="chapter full">
+    <div class="diagram">
+      <div class="d-node">Design intent</div><div class="d-arrow">→</div>
+      <div class="d-node">Build</div><div class="d-arrow">→</div>
+      <div class="d-node">Commit</div><div class="d-arrow">→</div>
+      <div class="d-node">Pull request</div><div class="d-arrow">→</div>
+      <div class="d-node">Live preview</div><div class="d-arrow">→</div>
+      <div class="d-node">Review</div><div class="d-arrow">→</div>
+      <div class="d-node">Merge</div><div class="d-arrow">→</div>
+      <div class="d-node">Communicate</div><div class="d-arrow">→</div>
+      <div class="d-node">Iterate</div>
+    </div>
+    <p class="caption">Each stage solves a different collaboration problem.</p>
+  </section>
+
+  <section class="chapter col">
+    <h2 class="sec-h">Five layers make the system work</h2>
+    <p class="lede" style="font-size:15px">The framework separates the workflow into five concerns.</p>
+  </section>
+
+  <section class="chapter col body-text" style="padding-top:0">
+    <h3 class="sub-h">01 — Creation · Build the interaction instead of only describing it</h3>
+    <p>Designers work directly in code with AI assistance. The goal isn't to turn designers into frontend engineers — it is to make the interaction itself available for inspection much earlier. Complex states, responsive behavior and edge cases can be experienced rather than inferred from static frames.</p>
+    <h3 class="sub-h" style="margin-top:28px">02 — Source of truth · Version the work and its reasoning</h3>
+    <p>Running prototypes live in a shared Git repository. Changes have history. Experiments can happen safely on branches. Meaningful design decisions are documented alongside the work through <strong>Design Decision Records</strong>, adapting the engineering pattern of Architecture Decision Records for design. The repository therefore captures both what changed and why it changed.</p>
+    <h3 class="sub-h" style="margin-top:28px">03 — Render & review · Review the same thing that changed</h3>
+    <p>Every pull request creates a live preview. Designers and engineers review the running interaction through the same change request rather than splitting feedback across a design file, a prototype and Slack. The important shift is not the preview itself — it is that feedback becomes anchored to a version of the work. When the design changes, its review history doesn't disappear.</p>
+    <h3 class="sub-h" style="margin-top:28px">04 — Communication · Generate updates from the work instead of rewriting the work</h3>
+    <p>Once changes are structured in version control, the system can understand what changed. AI-assisted workflows use that history to draft updates for communication and documentation tools. The designer still decides what matters and approves everything before it is published. The principle is: automate transcription, not judgment.</p>
+    <h3 class="sub-h" style="margin-top:28px">05 — Design system · Use production components, not visual approximations of them</h3>
+    <p>A coded prototype is still unreliable if its components merely imitate the production design system. The framework consumes the actual design-system packages engineers use — removing an entire category of drift. If a production component changes, the prototype changes with it. If a company's design system cannot be consumed this way, that limitation becomes visible immediately rather than being hidden behind visually accurate mockups.</p>
+  </section>
+
+  <section class="chapter col body-text">
+    <h2 class="sec-h">One review loop instead of parallel conversations</h2>
+    <p>One of the biggest weaknesses in the first version of the system was review. The source of truth lived in Git, while prototype comments could live somewhere else — that simply moved the original source-of-truth problem from design into feedback. So I changed the model: a pull request now becomes the collaboration object.</p>
+  </section>
+
+  <section class="chapter full">
+    <div class="diagram vertical">
+      <div class="d-node">PR opened</div>
+      <div class="d-arrow">↓</div>
+      <div class="d-node">Running preview generated</div>
+      <div class="d-arrow">↓</div>
+      <div class="d-node">Design + engineering review the change</div>
+      <div class="d-arrow">↓</div>
+      <div class="d-node">Feasibility questions and design feedback resolve in the same thread</div>
+      <div class="d-arrow">↓</div>
+      <div class="d-node">Merge</div>
+    </div>
+    <p class="caption">The preview is where people experience the work. The pull request is where the decision happens. The repository remains the record.</p>
+  </section>
+
+  <section class="chapter col body-text">
+    <h2 class="sec-h">Design Decision Records</h2>
+    <p>There was another problem static design tools handle poorly: why did we choose this? Engineering already has a useful pattern for this — Architecture Decision Records. I adapted that idea into <strong>Design Decision Records</strong>. A DDR captures the decision being made, the context behind it, alternatives considered, trade-offs, the chosen direction and consequences.</p>
+    <p>It also answers a surprisingly important question: what happens to the prototype? Executable doesn't automatically mean production-ready. For each project, the team explicitly names whether the prototype is production code, a reference implementation, a specification, or temporary exploration.</p>
+    <p>The default model in this framework is <strong>spec-first</strong>. The running prototype becomes a reference implementation engineering can inspect and compare against rather than code that is automatically assumed to ship. That distinction prevents "designing in code" from becoming an expensive way of producing disposable mockups.</p>
+  </section>
+
+  <section class="chapter col body-text">
+    <h2 class="sec-h">Closing the engineering feedback loop</h2>
+    <p>The original collaboration problem wasn't only that engineers couldn't see changes. Research showed that feasibility discussions happened too late — visibility alone isn't enough. Engineering needs a path back into design. Technical questions, implementation constraints and feasibility concerns flow back through the same pull request and repository. Design doesn't send a finished answer downstream; the artifact stays open to technical challenge while the solution is still changing.</p>
+    <p>This is one of the main reasons I think of the framework as <strong>collaboration</strong>, rather than a better handoff mechanism.</p>
+  </section>
+
+  <section class="chapter col body-text">
+    <h2 class="sec-h">Communication becomes an output of the system</h2>
+    <p>Two lightweight workflows handle most change communication.</p>
+    <p><strong>Notify</strong> — the system reads recent changes and drafts an update appropriate to their significance. Small paper cuts may not need an announcement. Meaningful changes can generate proposed messages and related ticket updates. The designer previews, edits and confirms before anything goes out.</p>
+    <p><strong>Digest</strong> — at a chosen cadence, repository history becomes the starting point for a broader project update: meaningful changes, versions, related work and current previews. Again, AI drafts. A human publishes. An automated safety net catches important changes that were merged without being communicated.</p>
+    <p>The intent isn't more automation. It's less duplicated work.</p>
+  </section>
+
+  <section class="chapter col body-text">
+    <h2 class="sec-h">From my workflow to a team workflow</h2>
+    <p>The framework began in the Content Security design × engineering team, where it is now used as an active working model. That proved it could work in one environment. It did <strong>not</strong> prove it could scale.</p>
+    <p>The initial conditions were unusually favourable: I was already comfortable working with Git and had a close working relationship with engineering. A Staff-level system should not depend on the person who invented it. So instead of treating the first implementation as proof, I designed the next phase as a pilot. Additional teams are now adopting the workflow under deliberately less ideal conditions, including designers with less Git experience and different design–engineering relationships.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="statement center">The question isn't "can other teams follow my process?" It's: <em>which parts of the system survive when I'm no longer the person operating it?</em></div>
+  </section>
+
+  <section class="chapter col body-text">
+    <h2 class="sec-h">What we're testing</h2>
+    <p>The pilot focuses on three measures, baselined before adoption and measured again during the pilot: <strong>design iteration cycle time</strong> — how long it takes to move from an idea to something design and engineering have actually reviewed; <strong>engineering visibility</strong> — do engineers understand what changed in design and why without reconstructing that information from multiple tools; and <strong>documentation overhead</strong> — how much time is spent manually maintaining updates, specifications and changelogs.</p>
+    <p>The point isn't to validate the framework. The numbers are allowed to prove it wrong.</p>
+  </section>
+
+  <section class="chapter col">
+    <h2 class="sec-h">A maturity model</h2>
+    <p class="lede" style="font-size:15px">Adoption moves through four stages, incrementally rather than as an all-or-nothing transformation.</p>
+  </section>
+
+  <section class="chapter full" style="padding-top:24px">
+    <div class="stages">
+      <div class="stage"><div class="sn">01</div><div class="st">Static</div><div class="caption" style="margin-top:6px">Design lives primarily in a design tool. The latest artifact is the truth.</div></div>
+      <div class="stage"><div class="sn">02</div><div class="st">Linked</div><div class="caption" style="margin-top:6px">Designs are connected to tickets and documentation. Truth remains distributed.</div></div>
+      <div class="stage on"><div class="sn">03</div><div class="st">Executable</div><div class="caption" style="margin-top:6px">Running prototypes live in version control with preview-per-change and shared review. The repository becomes the source of truth.</div></div>
+      <div class="stage"><div class="sn">04</div><div class="st">Integrated</div><div class="caption" style="margin-top:6px">Creation, design system, review, decision history and communication operate as one connected workflow.</div></div>
+    </div>
+  </section>
+
+  <section class="chapter col body-text">
+    <h2 class="sec-h">What I don't think the framework solves yet</h2>
+    <p><strong>Git fluency is still a dependency.</strong> AI makes code creation far more accessible, but designers still need a working mental model of commits, branches and pull requests. How much fluency is enough remains an open question.</p>
+    <p><strong>Discipline is easier to design than maintain.</strong> Decision records and clean version histories are easy to value when a team has time. Deadline pressure is the real test. Some behavior can be enforced through tooling. Good judgment cannot.</p>
+    <p><strong>Tooling creates dependencies.</strong> The framework is conceptually tool-agnostic. Any real implementation isn't. Preview environments, AI coding tools and integrations all create dependencies that need to be understood rather than ignored.</p>
+    <p><strong>Executable doesn't mean production.</strong> The relationship between prototype and production code must remain explicit. Without that agreement, executable design can simply create a more technically sophisticated version of the old handoff problem.</p>
+  </section>
+
+  <section class="chapter col">
+    <h2 class="sec-h">Reflection</h2>
+    <div class="body-text">
+      <p>The framework is now part of the working practice of the team where it was created and is being tested with additional teams. For me, the project has moved beyond a question of tooling. It started with: how can designers work more effectively with engineers? The more useful question became: what should the shared artifact between design and engineering actually be?</p>
+    </div>
+    <div class="pullquote">My answer is still being tested. But it is no longer a static picture.</div>
+  </section>
+
+  <div class="next-link col">
+    <div class="k">Next case study</div>
+    <div class="v"><a href="aws-quick-setup.html">AWS Quick Setup →</a></div>
+  </div>
+
+</main>
+</div>
+</body>
+</html>

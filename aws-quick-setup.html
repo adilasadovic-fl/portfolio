@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS Quick Setup — Adila Sadovic</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="shell">
+<aside class="side">
+  <div class="side-id"><div class="nm">Adila Sadovic</div><div class="rl">Product Designer</div></div>
+  <nav class="side-nav">
+    <a href="index.html">Home</a>
+    <div class="grp">Case Studies</div>
+    <a href="security-mode.html">Security Mode</a>
+    <a href="executable-collaboration.html">Executable Collaboration</a>
+    <a href="aws-quick-setup.html" class="active">AWS Quick Setup</a>
+    <div class="grp">More</div>
+    <a href="additional-work.html">Additional Work</a>
+  </nav>
+  <div class="side-foot">
+    <a href="mailto:adila.sadovic@gmail.com">adila.sadovic@gmail.com</a>
+    <a href="tel:+491722667345">+49 172 2667345</a>
+  </div>
+</aside>
+<main class="page">
+
+  <section class="chapter hero-block">
+    <div class="eyebrow">Case Study</div>
+    <h1 class="hero-title">AWS Quick Setup</h1>
+    <p class="lede">Hiding cloud complexity behind user intent.</p>
+    <div class="meta-row">
+      <div class="meta-item"><div class="k">Company</div><div class="v">AWS · Management Tools</div></div>
+      <div class="meta-item"><div class="k">Role</div><div class="v">Product Designer</div></div>
+      <div class="meta-item"><div class="k">Scope</div><div class="v">Multi-account, multi-Region configuration</div></div>
+      <div class="meta-item"><div class="k">Status</div><div class="v">Shipped · platform adopted by other AWS teams</div></div>
+    </div>
+  </section>
+
+  <section class="chapter col body-text">
+    <h2 class="sec-h">The problem</h2>
+    <p>AWS gives operators enormous control. That control also creates complexity. Configuring an operational capability can involve understanding multiple services, permissions, accounts, Regions and infrastructure dependencies before the user can accomplish the thing they actually came to do.</p>
+    <p>Within AWS Management Tools, we were working on a broader shift away from experiences that mirrored AWS's internal service structure and toward workflows organised around <strong>customer intent</strong>. Quick Setup was one expression of that strategy.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="statement center">Let the customer define the outcome. Let the system handle the <em>orchestration</em>.</div>
+  </section>
+
+  <section class="chapter col body-text">
+    <p>AWS already had the underlying services customers needed. The problem was assembling them. A DevOps engineer or IT administrator might need to configure infrastructure across services, accounts, Regions, permissions, resources and organizational units. Each individual system could be technically correct while the end-to-end task remained difficult. The customer experienced the seams between services.</p>
+    <p>That created a different kind of design question: how much of the underlying system does someone need to understand before they can safely configure it? Too much abstraction and experienced operators lose confidence and control. Too little abstraction and everyone is forced to reconstruct AWS's internal architecture just to complete a common task. Quick Setup had to sit between those extremes.</p>
+  </section>
+
+  <section class="chapter col body-text">
+    <h2 class="sec-h">The system</h2>
+    <p>Traditional infrastructure configuration often begins with the system: which service, which resource, which policy, which Region, which account. We reversed the direction — start with what you're trying to set up, then progressively ask only for the decisions the customer actually needs to make.</p>
+  </section>
+
+  <section class="chapter full">
+    <div class="diagram vertical">
+      <div class="d-node">Desired outcome</div>
+      <div class="d-arrow">↓</div>
+      <div class="d-node">Recommended configuration</div>
+      <div class="d-arrow">↓</div>
+      <div class="d-node">Scope</div>
+      <div class="d-arrow">↓</div>
+      <div class="d-node">Review</div>
+      <div class="d-arrow">↓</div>
+      <div class="d-node">Deploy</div>
+    </div>
+    <p class="caption">Underneath that simple flow could sit multiple AWS capabilities and infrastructure operations. The interface didn't remove that complexity — it moved it to the layer where it belonged.</p>
+  </section>
+
+  <section class="chapter col">
+    <h2 class="sec-h">Key decisions</h2>
+  </section>
+
+  <section class="chapter col" style="padding-top:0">
+    <div class="decision">
+      <div class="d-index">Decision 01</div>
+      <h3>Start with a library of outcomes</h3>
+      <div class="d-field"><div class="fk">Constraint</div><div class="fv">Customers needed a way in that didn't require first identifying every AWS service involved.</div></div>
+      <div class="d-field"><div class="fk">Competing options</div><div class="fv">Expose the underlying services and let customers compose their own configuration from scratch, versus offer a library of recommended configurations built around common operational needs.</div></div>
+      <div class="d-field"><div class="fk">Reasoning</div><div class="fv">Composing from scratch preserved maximum flexibility, but also preserved most of the original complexity.</div></div>
+      <div class="d-field"><div class="fk">Chosen model</div><div class="fv">Customers select the capability they want rather than first identifying every service needed to create it — changing the entry point from "configure these AWS services" to "set up this operational capability."</div></div>
+      <div class="d-field"><div class="fk">Consequence</div><div class="fv">The distinction looks small in the interface. Architecturally, it changes who carries the cognitive load.</div></div>
+    </div>
+
+    <div class="decision">
+      <div class="d-index">Decision 02</div>
+      <h3>Separate "what" from "where"</h3>
+      <div class="d-field"><div class="fk">Constraint</div><div class="fv">A configuration might need to apply to one resource, one account, selected accounts, selected Regions, or an entire organisation.</div></div>
+      <div class="d-field"><div class="fk">Competing options</div><div class="fv">Mix capability configuration and deployment scope into a single decision, versus treat them as two separate decisions.</div></div>
+      <div class="d-field"><div class="fk">Reasoning</div><div class="fv">Infrastructure tooling often mixes "what should happen" with "where should it happen" — that conflation gets harder to reason about as scale increases.</div></div>
+      <div class="d-field"><div class="fk">Chosen model</div><div class="fv">AWS Quick Setup supports configuration across individual accounts as well as multiple accounts and Regions through AWS Organizations, with capability and scope handled as distinct steps.</div></div>
+      <div class="d-field"><div class="fk">Consequence</div><div class="fv">Customers get a more stable mental model even as the scale of the operation changes dramatically — the same interaction can represent a small configuration or an organization-wide one.</div></div>
+    </div>
+
+    <div class="decision">
+      <div class="d-index">Decision 03</div>
+      <h3>Recommended defaults first, control second</h3>
+      <div class="d-field"><div class="fk">Constraint</div><div class="fv">Infrastructure interfaces often treat flexibility as the same thing as exposing options — but every additional field can represent a permission, infrastructure or operational decision with real consequences.</div></div>
+      <div class="d-field"><div class="fk">Competing options</div><div class="fv">Expose full configurability up front, versus lead with recommended defaults and allow deeper customization when needed.</div></div>
+      <div class="d-field"><div class="fk">Reasoning</div><div class="fv">Most customers should not need to make every possible decision.</div></div>
+      <div class="d-field"><div class="fk">Chosen model</div><div class="fv">Quick Setup used recommended defaults based on AWS guidance so customers could move quickly through common configurations, while still allowing deeper customization when the defaults didn't fit — recommended path first, advanced control when needed.</div></div>
+      <div class="d-field"><div class="fk">Consequence</div><div class="fv">Faster time-to-configuration for the common case, without removing control for the expert case.</div></div>
+    </div>
+
+    <div class="decision">
+      <div class="d-index">Decision 04</div>
+      <h3>Show the consequence before deployment</h3>
+      <div class="d-field"><div class="fk">Constraint</div><div class="fv">Abstraction creates a trust problem — if the system is doing work on the customer's behalf, the customer needs to understand what will happen before committing to it.</div></div>
+      <div class="d-field"><div class="fk">Competing options</div><div class="fv">Deploy directly from the recommended configuration, versus preview the actions and scope before deployment.</div></div>
+      <div class="d-field"><div class="fk">Reasoning</div><div class="fv">The system could hide implementation complexity without becoming opaque — the customer didn't need every low-level step in the primary workflow, but still needed enough visibility to make an informed infrastructure decision.</div></div>
+      <div class="d-field"><div class="fk">Chosen model</div><div class="fv">Selecting a configuration led to a preview of the actions and scope before deployment — customers see what would be created and where it would run before applying a configuration.</div></div>
+      <div class="d-field"><div class="fk">Consequence</div><div class="fv">Confidence in an automated system without requiring the customer to inspect every underlying step.</div></div>
+    </div>
+  </section>
+
+  <section class="chapter col body-text">
+    <h2 class="sec-h">Designing for one resource and an entire organisation</h2>
+    <p>Multi-account UX changes the nature of apparently simple controls. A selector is no longer just a selector when the choice may affect infrastructure across dozens or hundreds of environments. The design needed to make scope continuously legible: what am I changing, where will this change apply, how broad is the blast radius, can I verify the target before I deploy.</p>
+    <p>This is one of the areas where my broader Systems Manager work was particularly relevant. I also worked on cross-account experiences that allowed customers to view and act on applications across AWS Organizations, alongside operational workflows spanning observability, cost, compliance and security. Those projects shared the same underlying challenge: enterprise infrastructure becomes much harder to understand when the unit of interaction grows from one resource to an organization.</p>
+  </section>
+
+  <section class="chapter col body-text">
+    <h2 class="sec-h">A platform, not just a wizard</h2>
+    <p>The configuration library wasn't intended to be a fixed collection owned by one team. The system was designed so other AWS teams could contribute configurations for their own capabilities while relying on the same setup model — a platform that allowed other AWS teams to publish their own configurations and workflows.</p>
+    <p>That changed the design problem. We weren't only designing a setup flow — we were defining a repeatable grammar for setup.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="diagram">
+      <div class="d-node">Choose</div><div class="d-arrow">→</div>
+      <div class="d-node">Configure</div><div class="d-arrow">→</div>
+      <div class="d-node">Scope</div><div class="d-arrow">→</div>
+      <div class="d-node">Review</div><div class="d-arrow">→</div>
+      <div class="d-node">Deploy</div>
+    </div>
+    <p class="caption">A new configuration could vary in parameters and underlying services while retaining the same interaction model. That consistency mattered for customers, and created leverage internally — new capabilities didn't need to invent a new setup experience from scratch.</p>
+  </section>
+
+  <section class="chapter col body-text">
+    <h2 class="sec-h">Complexity still exists under the interface</h2>
+    <p>One of the lessons from the project was that good enterprise UX doesn't necessarily make the underlying system simpler. Sometimes the underlying system should remain complex. Cloud infrastructure has real accounts, permissions, Regions, dependencies and failure conditions. Pretending otherwise would be dangerous.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="statement center">Expose complexity when the customer needs to reason about it, and <em>absorb it</em> when they don't.</div>
+    <p class="caption" style="text-align:center">Quick Setup made the simple path genuinely simple without removing the deeper model required by expert users.</p>
+  </section>
+
+  <section class="chapter col body-text">
+    <h2 class="sec-h">Outcome / status</h2>
+    <p>Quick Setup sat inside a much larger Management Tools transformation, so I would not attribute the program's business outcomes to one feature or one designer. The publicly documented program reports improvements including 64% cross-feature adoption, a 20% reduction in time to first cross-feature, and 50% month-over-month growth in cross-account deployment. I treat those as evidence of the broader direction rather than a causal claim about Quick Setup alone.</p>
+    <p>The more important product outcome for this case study is structural: customers could increasingly operate AWS around tasks and desired outcomes rather than manually navigating the service architecture underneath them.</p>
+  </section>
+
+  <section class="chapter col">
+    <h2 class="sec-h">Reflection</h2>
+    <div class="body-text">
+      <p>Quick Setup changed how I think about technical product design. Complexity isn't inherently bad. Unnecessary exposure to complexity is.</p>
+      <p>In infrastructure products, the designer's job isn't to make the system look simple. It's to understand the system deeply enough to know what the customer must understand, what the customer may want to understand, and what the product should handle for them. That distinction has stayed central to how I design enterprise systems ever since.</p>
+    </div>
+  </section>
+
+  <div class="next-link col">
+    <div class="k">More</div>
+    <div class="v"><a href="additional-work.html">Additional Work →</a></div>
+  </div>
+
+</main>
+</div>
+</body>
+</html>

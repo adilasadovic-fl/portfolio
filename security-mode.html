@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security Mode — Adila Sadovic</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="shell">
+<aside class="side">
+  <div class="side-id"><div class="nm">Adila Sadovic</div><div class="rl">Product Designer</div></div>
+  <nav class="side-nav">
+    <a href="index.html">Home</a>
+    <div class="grp">Case Studies</div>
+    <a href="security-mode.html" class="active">Security Mode</a>
+    <a href="executable-collaboration.html">Executable Collaboration</a>
+    <a href="aws-quick-setup.html">AWS Quick Setup</a>
+    <div class="grp">More</div>
+    <a href="additional-work.html">Additional Work</a>
+  </nav>
+  <div class="side-foot">
+    <a href="mailto:adila.sadovic@gmail.com">adila.sadovic@gmail.com</a>
+    <a href="tel:+491722667345">+49 172 2667345</a>
+  </div>
+</aside>
+<main class="page">
+
+  <section class="chapter hero-block">
+    <div class="eyebrow">Case Study</div>
+    <h1 class="hero-title">Security Mode</h1>
+    <p class="lede">Protecting sensitive content without breaking collaboration.</p>
+    <div class="meta-row">
+      <div class="meta-item"><div class="k">Company</div><div class="v">Miro</div></div>
+      <div class="meta-item"><div class="k">Role</div><div class="v">Design Owner</div></div>
+      <div class="meta-item"><div class="k">Scope</div><div class="v">Content Security · Enterprise Guard</div></div>
+      <div class="meta-item"><div class="k">Status</div><div class="v">Available to enterprise customers</div></div>
+    </div>
+    <div class="diagram" style="margin-top:36px">
+      <div class="d-node">Detect</div><div class="d-arrow">→</div>
+      <div class="d-node">Classify</div><div class="d-arrow">→</div>
+      <div class="d-node">Protect</div><div class="d-arrow">→</div>
+      <div class="d-node">Review</div><div class="d-arrow">→</div>
+      <div class="d-node">Remediate</div><div class="d-arrow">→</div>
+      <div class="d-node">Reclassify</div>
+    </div>
+  </section>
+
+  <section class="chapter col body-text">
+    <h2 class="sec-h">The problem</h2>
+    <p>Miro is designed around openness. Put something on a canvas. Invite people in. Share ideas quickly. Let the board evolve.</p>
+    <p>Enterprise security introduces the opposite requirement. Some content should make a board <strong>less open</strong>.</p>
+    <p>Security Mode is the system I designed around that contradiction: when a board is classified as sensitive, its security posture changes. Access can narrow, sharing can be constrained, detected content can be reviewed and resolved, and changing the board back requires a governed path.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="statement center">Security should change the state of the board, <em>not</em> turn the product into a wall of restrictions.</div>
+    <p class="caption" style="text-align:center">The collaboration continues. The rules around it change.</p>
+  </section>
+
+  <section class="chapter col body-text">
+    <h2 class="sec-h">A canvas creates a different security problem</h2>
+    <p>Sensitive-content protection is relatively easy to imagine in a structured document. A Miro board is different. Over its lifetime it can accumulate sticky notes, screenshots, tables, diagrams, uploaded files, embedded content and free-form text from many contributors. Sensitive information can appear almost anywhere.</p>
+    <p>At the same time, almost every interaction in the product is optimized to reduce friction around collaboration. That creates a fundamental tension. Move too far toward control and legitimate work becomes painful. Move too far toward collaboration and sensitive information remains exposed. Most of the design work happened somewhere on that line.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="tension">
+      <span class="side-a">Collaboration</span>
+      <span class="arrows">←──────→</span>
+      <span class="side-b">Control</span>
+    </div>
+  </section>
+
+  <section class="chapter col body-text">
+    <h2 class="sec-h">The system</h2>
+    <p>The experience can be understood as one lifecycle. Each stage changes what the user, the administrator or the system is allowed to do. That meant the design problem couldn't be solved screen by screen — the interaction model, permissions model and system behavior had to agree.</p>
+  </section>
+
+  <section class="chapter full">
+    <div class="diagram vertical">
+      <div class="d-node">Detect<span class="sub">Structured types, keywords, ML-based sensitivity signals</span></div>
+      <div class="d-arrow">↓</div>
+      <div class="d-node">Classify<span class="sub">Automated rules, or people with authority to classify</span></div>
+      <div class="d-arrow">↓</div>
+      <div class="d-node">Protect<span class="sub">Board enters a persistent protected state</span></div>
+      <div class="d-arrow">↓</div>
+      <div class="d-node">Review<span class="sub">Matches inspected in context on the canvas</span></div>
+      <div class="d-arrow">↓</div>
+      <div class="d-node">Remediate<span class="sub">Board owner or contributor resolves the finding</span></div>
+      <div class="d-arrow">↓</div>
+      <div class="d-node">Reclassify<span class="sub">Governed path back — a different authority than classifying</span></div>
+    </div>
+    <div class="actor-row">
+      <span class="actor">Admin</span><span class="actor">Board owner</span><span class="actor">Editor</span><span class="actor">Viewer</span><span class="actor">Security system</span>
+    </div>
+  </section>
+
+  <section class="chapter col body-text">
+    <h3 class="sub-h">01 — Detect</h3>
+    <p>Sensitive content can be surfaced through different forms of detection. Some are relatively deterministic, such as structured information types or configured keywords. Others rely on machine-learning-based sensitivity signals and cannot always provide a precise human-readable explanation for why something matched.</p>
+    <p>The first challenge was therefore not simply displaying a result. It was designing <strong>one review model across detection technologies with very different levels of explainability.</strong> The experience asks the same questions regardless of detection type: what was found, where is it, what does the system know about it, what can I do next. The quality of the explanation may vary. The mental model does not.</p>
+    <h3 class="sub-h" style="margin-top:30px">02 — Classify</h3>
+    <p>Detection alone doesn't define the board's security state. A board can become classified through automated rules or through people who have the authority to classify it. Classification introduced an authority problem: who is allowed to decide that a board is sensitive, and who is allowed to decide that it isn't anymore. Those two permissions cannot be treated as equivalent — classifying a board generally increases protection; reclassifying it can remove protection. The design model had to distinguish between the two and make authority part of the product behavior rather than burying it in an admin setting.</p>
+  </section>
+
+  <section class="chapter col">
+    <h2 class="sec-h">Key decisions</h2>
+  </section>
+
+  <section class="chapter col" style="padding-top:0">
+    <div class="decision">
+      <div class="d-index">Decision 01</div>
+      <h3>Make protection a board state</h3>
+      <div class="d-field"><div class="fk">Constraint</div><div class="fv">Every security event — a restricted share, a sensitive-content match, a classification change — could be handled as a separate, unrelated interruption.</div></div>
+      <div class="d-field"><div class="fk">Competing options</div><div class="fv">Treat each security event independently with its own warning or banner, versus giving the board one persistent, coherent state.</div></div>
+      <div class="d-field"><div class="fk">Reasoning</div><div class="fv">Technically, isolated events could all work. Conceptually, they leave users without a stable answer to a basic question: what kind of board am I working in?</div></div>
+      <div class="d-field"><div class="fk">Chosen model</div><div class="fv">Classification moves the board into a persistent protected state. Security Mode becomes part of the board's identity — access expectations change consistently, sharing follows policy, and review and remediation belong to the same security model.</div></div>
+      <div class="d-field"><div class="fk">Consequence</div><div class="fv">The user isn't encountering unrelated security interruptions. They're working inside a board whose posture has changed.</div></div>
+    </div>
+
+    <div class="decision">
+      <div class="d-index">Decision 02</div>
+      <h3>Protect without removing the product</h3>
+      <div class="d-field"><div class="fk">Constraint</div><div class="fv">A straightforward security solution would be to lock down everything — but that would undermine the reason people use Miro.</div></div>
+      <div class="d-field"><div class="fk">Competing options</div><div class="fv">Broad restriction across the whole board versus targeted restriction of only the behaviors that increase exposure.</div></div>
+      <div class="d-field"><div class="fk">Reasoning</div><div class="fv">The starting question isn't "what should we disable?" — it's "which behavior actually increases exposure?" That reframing produces much more targeted intervention.</div></div>
+      <div class="d-field"><div class="fk">Chosen model</div><div class="fv">Restrict what the risk requires. Preserve everything else. The protected board should still feel like a board — people can still think, work and collaborate inside it unless a particular action introduces risk.</div></div>
+      <div class="d-field"><div class="fk">Consequence</div><div class="fv">Protection reads as a change in posture, not a removal of the product.</div></div>
+    </div>
+
+    <div class="decision">
+      <div class="d-index">Decision 03</div>
+      <h3>Bring remediation to the content</h3>
+      <div class="d-field"><div class="fk">Constraint</div><div class="fv">Security systems traditionally surface problems to administrators — but an administrator often isn't the person who understands why a particular piece of content exists or what should happen to it.</div></div>
+      <div class="d-field"><div class="fk">Competing options</div><div class="fv">Centralize remediation in an admin console versus connect admin governance with in-context remediation where the content actually lives.</div></div>
+      <div class="d-field"><div class="fk">Reasoning</div><div class="fv">The person closest to the content is usually the board owner or contributor, not the admin. Forcing them to translate an abstract security alert back into a visual workspace adds a costly extra step.</div></div>
+      <div class="d-field"><div class="fk">Chosen model</div><div class="fv">On the board, people can inspect sensitive-content findings where those findings actually live — combining a list of detected matches, the spatial canvas context, and detail for the selected finding.</div></div>
+      <div class="d-field"><div class="fk">Consequence</div><div class="fv">The content and the security decision remain connected.</div></div>
+    </div>
+
+    <div class="decision">
+      <div class="d-index">Decision 04</div>
+      <h3>Make false positives a primary flow</h3>
+      <div class="d-field"><div class="fk">Constraint</div><div class="fv">False positives aren't an edge case in automated detection — they're part of the system, and their cost is different from a false negative's cost. A false positive can interrupt legitimate work and erode trust in future detections.</div></div>
+      <div class="d-field"><div class="fk">Competing options</div><div class="fv">Design only for the happy path (accept, resolved) versus treat review, dismissal and reclassification as first-class paths.</div></div>
+      <div class="d-field"><div class="fk">Reasoning</div><div class="fv">Designing only for the happy path would create a system that slowly teaches people to ignore it.</div></div>
+      <div class="d-field"><div class="fk">Chosen model</div><div class="fv">Where the underlying detection technology can explain a result, the interface exposes that evidence. Where it cannot, the product compensates with clearer review states, careful language and an obvious human decision path.</div></div>
+      <div class="d-field"><div class="fk">Consequence</div><div class="fv">The goal isn't to make automation appear more certain than it is — it's to make the limits of the automation manageable.</div></div>
+    </div>
+
+    <div class="decision">
+      <div class="d-index">Decision 05</div>
+      <h3>Treat configuration as part of the threat model</h3>
+      <div class="d-field"><div class="fk">Constraint</div><div class="fv">Administrators need flexibility, but some configuration changes can weaken protection — the configuration surface itself becomes part of the security problem.</div></div>
+      <div class="d-field"><div class="fk">Competing options</div><div class="fv">Make every setting configurable versus introduce guardrails wherever a setting could undermine the security model.</div></div>
+      <div class="d-field"><div class="fk">Reasoning</div><div class="fv">This changed the design question from "which settings do admins want?" to "which degrees of freedom are safe to expose?" — a much more consequential product decision.</div></div>
+      <div class="d-field"><div class="fk">Chosen model</div><div class="fv">Security Mode's policy model works across reclassification strictness, trigger conditions, false-positive handling and classification permissions, with guardrails built into each.</div></div>
+      <div class="d-field"><div class="fk">Consequence</div><div class="fv">Configuration flexibility is bounded by what the security model can safely allow.</div></div>
+    </div>
+  </section>
+
+  <section class="chapter col body-text">
+    <h2 class="sec-h">How it works</h2>
+    <p>Security Mode has two main operating surfaces that rely on the same underlying state and permission model.</p>
+  </section>
+
+  <section class="chapter full">
+    <div class="diagram">
+      <div class="d-node">On the board<span class="sub">Where collaboration happens — protected status, review, remediation</span></div>
+      <div class="d-arrow">↔</div>
+      <div class="d-node">In administration<span class="sub">Where policy is defined — classification, permissions, visibility</span></div>
+    </div>
+  </section>
+
+  <section class="chapter col body-text">
+    <p><strong>On the board</strong>, people need to understand that the board is protected, what content triggered review, where that content exists, what action they can take and what effect that action will have. Security needs to remain legible without dominating the workspace.</p>
+    <p><strong>In administration</strong>, administrators need to control classification behavior, permissions, protection rules, remediation policy and visibility across protected content. The board is where the problem is resolved. The admin surface is where the rules are governed.</p>
+  </section>
+
+  <div class="shot">
+    <div>
+      <div class="lbl">Match review + remediation UI</div>
+      Board-level match list with canvas highlighting and per-item detail — awaiting screenshot
+    </div>
+  </div>
+
+  <section class="chapter col body-text">
+    <h2 class="sec-h">The hardest design work happened below the interface</h2>
+    <p>A significant part of Security Mode wasn't visual design. It was defining behavior. Where does the authoritative configuration live? What happens when a board changes classification while people are already working in it? Which actions remain available in each state? How do permissions behave during reclassification? How do multiple detection mechanisms resolve into one board-level state? What happens when policy and user intent disagree?</p>
+    <p>These questions were worked through directly with product and engineering. Design owned the flow and access models used to reason about the system, not only the screens produced after those decisions. The interface became the visible consequence of a much deeper behavioral model.</p>
+  </section>
+
+  <section class="chapter col body-text">
+    <h2 class="sec-h">Outcome / status</h2>
+    <p>The core Security Mode experience is available to enterprise customers. Review and remediation have expanded the system from simply protecting sensitive boards toward helping people understand and resolve the content that caused protection in the first place. Configuration and administrative visibility continue to build around the same underlying model.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="diagram">
+      <div class="d-node">Detect</div><div class="d-arrow">→</div>
+      <div class="d-node">Protect</div><div class="d-arrow">→</div>
+      <div class="d-node">Understand</div><div class="d-arrow">→</div>
+      <div class="d-node">Resolve</div><div class="d-arrow">→</div>
+      <div class="d-node">Govern</div>
+    </div>
+    <p class="caption">The lifecycle the system is becoming.</p>
+  </section>
+
+  <section class="chapter col">
+    <h2 class="sec-h">Reflection</h2>
+    <div class="pullquote">Security products are often described as a balance between usability and control. I think that's slightly misleading. The goal isn't to compromise until both sides are equally unhappy. The better question is: where is friction actually justified by risk?</div>
+    <div class="body-text">
+      <p>Some actions should remain effortless. Some should require explanation. Some should require authority. And some should simply not be possible. Security Mode taught me to treat those as <strong>product-state decisions</strong>, not UI states. The interface only becomes clear once the system has decided what people are allowed to do, what the machine knows, and where human judgment must take over.</p>
+    </div>
+  </section>
+
+  <div class="next-link col">
+    <div class="k">Next case study</div>
+    <div class="v"><a href="executable-collaboration.html">Executable Collaboration →</a></div>
+  </div>
+
+</main>
+</div>
+</body>
+</html>

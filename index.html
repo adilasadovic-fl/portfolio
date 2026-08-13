@@ -1,88 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Adila Sadovic — Portfolio</title>
-<meta name="description" content="Product designer building executable design systems — case studies in design × engineering collaboration." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adila Sadovic — Product Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<nav class="site-nav">
-  <a class="mark" href="index.html">Adila Sadovic</a>
-  <div class="links">
-    <a href="index.html#work">Work</a>
-    <a href="index.html#about">About</a>
-    <a href="index.html#contact">Contact</a>
+<div class="shell">
+<aside class="side">
+  <div class="side-id"><div class="nm">Adila Sadovic</div><div class="rl">Product Designer</div></div>
+  <nav class="side-nav">
+    <a href="index.html" class="active">Home</a>
+    <div class="grp">Case Studies</div>
+    <a href="security-mode.html">Security Mode</a>
+    <a href="executable-collaboration.html">Executable Collaboration</a>
+    <a href="aws-quick-setup.html">AWS Quick Setup</a>
+    <div class="grp">More</div>
+    <a href="additional-work.html">Additional Work</a>
+  </nav>
+  <div class="side-foot">
+    <a href="mailto:adila.sadovic@gmail.com">adila.sadovic@gmail.com</a>
+    <a href="tel:+491722667345">+49 172 2667345</a>
   </div>
-</nav>
+</aside>
+<main class="page">
 
-<header class="wrap hero">
-  <div class="eyebrow">Product Designer</div>
-  <h1>Designing systems that ship as code, not screens that get thrown away.</h1>
-  <p class="role">I work at the intersection of design and engineering — building executable prototypes, versioned design systems, and the collaboration frameworks that keep them from drifting apart.</p>
-</header>
-
-<hr class="rule wrap" />
-
-<section id="work" class="wrap">
-  <div class="eyebrow" style="margin-bottom:32px;">Selected Work</div>
-
-  <div class="work-list">
-
-    <a class="work-item" href="projects/cose-collaboration-framework.html">
-      <div class="row">
-        <div class="title-group">
-          <span class="index">01</span>
-          <h3>Beyond Handoff — a Design × Engineering Collaboration Framework</h3>
-        </div>
-        <span class="arrow">→</span>
-      </div>
-      <p class="summary">A code-based system for how design and engineering work together at Miro's COSE team — replacing disconnected tools and static handoffs with a shared, versioned, executable source of truth.</p>
-      <div class="tags">
-        <span class="tag">Systems Design</span>
-        <span class="tag">Design Engineering</span>
-        <span class="tag">2025 – 2026</span>
-      </div>
-    </a>
-
-  </div>
-
-  <p class="work-note">More case studies — including AWS Systems Manager work — in progress.</p>
-</section>
-
-<section id="about" class="wrap">
-  <div class="two-col">
-    <div class="eyebrow">About</div>
-    <div>
-      <p class="lede">I'm a product designer who codes — I design directly in the same tools and repositories engineering ships from, so the artifact under review is the real thing, not a static stand-in for it.</p>
-      <p>My work lately has focused on the structural side of design: how a prototype stays a single source of truth as it moves from idea to production, how feedback stays attached to the thing it's about, and how design systems get consumed as code instead of screenshots. I care more about whether the system holds together than whether the deck looks good — architecture over effects.</p>
+  <section class="chapter hero-block">
+    <div class="col">
+      <div class="eyebrow">Product Designer</div>
+      <h1 class="hero-title">I design complex systems until they feel obvious.</h1>
+      <p class="lede">Product designer working across enterprise software, infrastructure, security and AI-enabled ways of building.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact" class="wrap tight">
-  <div class="two-col">
-    <div class="eyebrow">Contact</div>
-    <div>
-      <p>Open to conversations about design systems, design-engineering collaboration, and AI-assisted workflows.</p>
-      <ul class="contact-list">
-        <li><a href="mailto:adila.sadovic@gmail.com">adila.sadovic@gmail.com</a></li>
-        <li><a href="#">LinkedIn</a></li>
-        <li><a href="#">GitHub</a></li>
-      </ul>
+  <section class="chapter" style="padding-top:0">
+    <div class="project-entry">
+      <div>
+        <div class="pe-num">01</div>
+        <div class="pe-title"><a href="security-mode.html">Security Mode</a></div>
+        <p class="pe-desc">Designing protection, permissions and remediation for sensitive content without breaking collaboration.</p>
+        <div class="tag-row"><span class="tag">Enterprise Security</span><span class="tag">Systems Design</span><span class="tag">Governance</span></div>
+      </div>
+      <div class="pe-thumb">System diagram — Detect → Protect → Remediate</div>
     </div>
-  </div>
-</section>
 
-<footer>
-  <span>© 2026 Adila Sadovic</span>
-  <span>Built with plain HTML &amp; CSS</span>
-</footer>
+    <div class="project-entry">
+      <div>
+        <div class="pe-num">02</div>
+        <div class="pe-title"><a href="executable-collaboration.html">Executable Collaboration</a></div>
+        <p class="pe-desc">Turning static design artifacts into executable, versioned workflows shared by design and engineering.</p>
+        <div class="tag-row"><span class="tag">Design Engineering</span><span class="tag">AI</span><span class="tag">Developer Workflows</span></div>
+      </div>
+      <div class="pe-thumb">Intent → Code → PR → Review → Merge</div>
+    </div>
 
+    <div class="project-entry">
+      <div>
+        <div class="pe-num">03</div>
+        <div class="pe-title"><a href="aws-quick-setup.html">AWS Quick Setup</a></div>
+        <p class="pe-desc">Making multi-account cloud configuration understandable without exposing the orchestration underneath.</p>
+        <div class="tag-row"><span class="tag">Cloud Infrastructure</span><span class="tag">Automation</span><span class="tag">Enterprise UX</span></div>
+      </div>
+      <div class="pe-thumb">Intent → Quick Setup → Accounts × Regions</div>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="col">
+      <div class="eyebrow">Additional Work</div>
+      <h2 class="sec-h" style="margin-top:12px">Guardrails, Custom Terms of Service, and other Content Security work</h2>
+      <p class="lede" style="font-size:15px">Earlier and adjacent projects inside Miro's Enterprise Guard ecosystem.</p>
+      <p style="margin-top:16px"><a href="additional-work.html">View additional work →</a></p>
+    </div>
+  </section>
+
+</main>
+</div>
 </body>
 </html>
