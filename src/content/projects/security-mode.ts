@@ -8,7 +8,7 @@ export const securityMode: Project = {
   company: "Miro — Enterprise Guard",
   domain: "Enterprise security & governance",
   role: "Senior Product Designer",
-  timeframe: "Feb 2024 — Present",
+  timeframe: "March 2026 — Present",
   summary:
     "A board classified as sensitive changes its security posture: access can narrow, sharing can be constrained, detected content can be reviewed and resolved, and changing the board back requires a governed path.",
   tags: ["Governance", "Permissions & states", "Detection & remediation"],
@@ -16,7 +16,7 @@ export const securityMode: Project = {
   meta: [
     { label: "Company", value: "Miro — Enterprise Guard" },
     { label: "Role", value: "Senior Product Designer" },
-    { label: "Timeframe", value: "Feb 2024 — Present" },
+    { label: "Timeframe", value: "March 2026 — Present" },
     {
       label: "Scope",
       value: "Board experience, admin policy, review and remediation",
@@ -28,16 +28,7 @@ export const securityMode: Project = {
     width: 1024,
     height: 682,
   },
-  hero: {
-    src: "/media/security-mode/system-diagram.jpg",
-    alt: "System diagram of Security Mode. Signals in — information types, keywords, component subtypes, portal signals and machine-learning labels — pass through automated detection or manual classification into a protected board. Human roles surround the board, a governance layer defines strictness rules, classification permissions, guardrails, reclassification review and false-positive handling, and outcomes are confirm, dismiss or remediate.",
-    caption:
-      "Security Mode as one system: signals in, a trigger into the protected state, human roles on the board, the governance layer around it, and the outcomes that resolve it.",
-    width: 1024,
-    height: 682,
-    size: "full",
-    zoomable: true,
-  },
+
   sections: [
     {
       id: "overview",
@@ -71,21 +62,7 @@ export const securityMode: Project = {
           type: "p",
           text: "Sensitive-content protection is relatively easy to imagine in a structured document.",
         },
-        { type: "p", text: "A Miro board is different." },
-        { type: "p", text: "Over its lifetime it can accumulate:" },
-        {
-          type: "stack",
-          items: [
-            "sticky notes",
-            "screenshots",
-            "tables",
-            "diagrams",
-            "uploaded files",
-            "embedded content",
-            "free-form text",
-          ],
-        },
-        { type: "p", text: "from many contributors." },
+        { type: "p", text: "A Miro board is different. Over its lifetime it can accumulate hundreds, if not thousands components (sticky notes, tables, screenshots) from many contributors." },
         { type: "p", text: "Sensitive information can appear almost anywhere." },
         {
           type: "p",
@@ -309,38 +286,8 @@ export const securityMode: Project = {
               type: "p",
               text: "On the board, people can inspect sensitive-content findings where those findings actually live.",
             },
-            { type: "p", text: "The experience combines:" },
-            {
-              type: "stack",
-              items: [
-                "a list of detected matches",
-                "the spatial canvas context",
-                "detail for the selected finding",
-              ],
-            },
-            {
-              type: "figures",
-              figures: [
-                {
-                  src: "/media/security-mode/board-remediation.png",
-                  alt: "A protected Miro board with a content remediation panel open on the left, listing fifteen matches grouped by Internal and Restricted classification alongside the board content that triggered them.",
-                  caption:
-                    "Findings stay attached to the board they came from: matches on the left, the canvas they belong to on the right.",
-                  width: 1024,
-                  height: 685,
-                  theme: "light",
-                },
-                {
-                  src: "/media/security-mode/match-details.png",
-                  alt: "Match details view showing a single privacy-related finding with status, detection date, pattern type, label IDs, an explanation link, and actions to mark as resolved or remove the widget, with the matching widget highlighted on the canvas.",
-                  caption:
-                    "A selected match: what was found, what the system knows about it, and the actions available — including reporting a false match.",
-                  width: 1024,
-                  height: 668,
-                  theme: "light",
-                },
-              ],
-            },
+            { type: "p", text: "The experience combines detected matches, spatial canvas context and finding details." },
+
             {
               type: "p",
               text: "That means users don't have to translate an abstract security alert back into a visual workspace before they can act.",
@@ -467,30 +414,8 @@ export const securityMode: Project = {
         },
         { type: "h3", text: "In administration" },
         { type: "p", text: "This is where policy is defined." },
-        { type: "p", text: "Administrators need to control:" },
-        {
-          type: "bullets",
-          items: [
-            "classification behavior",
-            "permissions",
-            "protection rules",
-            "remediation policy",
-            "visibility across protected content",
-          ],
-        },
-        {
-          type: "figure",
-          figure: {
-            src: "/media/security-mode/admin-overview.png",
-            alt: "Enterprise Guard admin view for Security Mode showing the number of boards in Security Mode, a false-match count, and a table of boards with creator, current classification, previous classification, false matches and last activity.",
-            caption:
-              "The administrative surface: which boards are protected, how classification changed, and where false matches are accumulating.",
-            width: 1024,
-            height: 588,
-            size: "full",
-            theme: "light",
-          },
-        },
+        { type: "p", text: "Administrators need to control classification behavior, permissions, protection rules, remediation policy and visibility across protected content." },
+
         { type: "p", text: "The board is where the problem is resolved." },
         { type: "p", text: "The admin surface is where the rules are governed." },
         {
@@ -591,35 +516,6 @@ export const securityMode: Project = {
         },
       ],
     },
-    {
-      id: "reflection",
-      nav: "Reflection",
-      title: "What I took from the project",
-      blocks: [
-        {
-          type: "p",
-          text: "Security products are often described as a balance between usability and control.",
-        },
-        { type: "p", text: "I think that's slightly misleading." },
-        {
-          type: "p",
-          text: "The goal isn't to compromise until both sides are equally unhappy.",
-        },
-        { type: "p", text: "The better question is:" },
-        { type: "question", text: "Where is friction actually justified by risk?" },
-        { type: "p", text: "Some actions should remain effortless." },
-        { type: "p", text: "Some should require explanation." },
-        { type: "p", text: "Some should require authority." },
-        { type: "p", text: "And some should simply not be possible." },
-        {
-          type: "p",
-          text: "Security Mode taught me to treat those as **product-state decisions**, not UI states.",
-        },
-        {
-          type: "p",
-          text: "The interface only becomes clear once the system has decided what people are allowed to do, what the machine knows, and where human judgment must take over.",
-        },
-      ],
-    },
+
   ],
 };
