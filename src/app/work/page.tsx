@@ -19,9 +19,6 @@ export default function WorkPage() {
           <h1 className="mt-8 max-w-[18ch] text-title font-medium tracking-tight text-ink">
             Systems for security, governance and cloud operations.
           </h1>
-          <p className="measure-wide mt-6 text-lead text-ink-soft">
-            Three case studies carry the detail. The rest establishes range.
-          </p>
         </Container>
       </section>
 

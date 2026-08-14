@@ -28,6 +28,16 @@ export const securityMode: Project = {
     width: 1024,
     height: 682,
   },
+  hero: {
+    src: "/media/security-mode/system-diagram.jpg",
+    alt: "System diagram of Security Mode. Signals in — information types, keywords, component subtypes, portal signals and machine-learning labels — pass through automated detection or manual classification into a protected board. Human roles surround the board, a governance layer defines strictness rules, classification permissions, guardrails, reclassification review and false-positive handling, and outcomes are confirm, dismiss or remediate.",
+    caption:
+      "Security Mode as one system: signals in, a trigger into the protected state, human roles on the board, the governance layer around it, and the outcomes that resolve it.",
+    width: 1024,
+    height: 682,
+    size: "full",
+    zoomable: true,
+  },
 
   sections: [
     {

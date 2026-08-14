@@ -311,66 +311,6 @@ export const awsQuickSetup: Project = {
       ],
     },
     {
-      id: "console",
-      nav: "Console",
-      title: "Configuration surfaces",
-      blocks: [
-        {
-          type: "figures",
-          figures: [
-            {
-              src: "/media/aws-quick-setup/configuration-library.png",
-              alt: "Systems Manager configuration library screen with a search field, popular labels filter and cards for Host Management, Application Management, Resource Management, Agent installation, Machine learning operational monitoring and Compliance Management.",
-              caption:
-                "The configuration library: capabilities presented as configurations an operator can find, compare and provision.",
-              width: 1024,
-              height: 951,
-              theme: "dark",
-            },
-            {
-              src: "/media/aws-quick-setup/configuration-detail.png",
-              alt: "Application Manager configuration detail panel describing who the configuration is for, what will be provisioned, and the benefits, with screenshots of the resulting dashboards.",
-              caption:
-                "Configuration detail: what a configuration provisions and what it enables, before anything is deployed.",
-              width: 895,
-              height: 1002,
-              theme: "dark",
-            },
-          ],
-        },
-        {
-          type: "p",
-          text: "Inside a configuration, recommended defaults and advanced control sit on the same page, so an operator can accept AWS guidance or express an exact operational policy.",
-        },
-        {
-          type: "figure",
-          figure: {
-            src: "/media/aws-quick-setup/patch-schedule.png",
-            alt: "Quick Setup patch policy form: patch operation set to scan and install, recommended default scanning schedule, custom install schedule with a CRON expression, and options to wait for the first CRON interval and to reboot if needed.",
-            caption:
-              "Scanning and installation: recommended defaults sit beside custom schedules, so an operator can accept a baseline or express an exact CRON window.",
-            width: 1024,
-            height: 565,
-            size: "full",
-            theme: "light",
-          },
-        },
-        {
-          type: "figure",
-          figure: {
-            src: "/media/aws-quick-setup/patch-baselines.png",
-            alt: "Patch baseline selection listing every supported operating system with a baseline dropdown and baseline ID, three rows highlighted where custom baselines were selected.",
-            caption:
-              "Baseline selection across every supported operating system, with the AWS defaults visible next to the custom baselines an organisation has chosen.",
-            width: 1024,
-            height: 735,
-            size: "full",
-            theme: "light",
-          },
-        },
-      ],
-    },
-    {
       id: "scale",
       nav: "Scale",
       title: "Designing for one resource and an entire organisation",
@@ -474,60 +414,62 @@ export const awsQuickSetup: Project = {
       ],
     },
     {
-      id: "reflection",
-      nav: "Reflection",
-      title: "Complexity still exists under the interface",
+      id: "outcome-glimpses",
+      nav: "Outcome glimpses",
+      title: "Configuration surfaces",
       blocks: [
         {
-          type: "p",
-          text: "One of the lessons from the project was that good enterprise UX doesn't necessarily make the underlying system simpler.",
-        },
-        { type: "p", text: "Sometimes the underlying system should remain complex." },
-        {
-          type: "p",
-          text: "Cloud infrastructure has real accounts, permissions, Regions, dependencies and failure conditions.",
-        },
-        { type: "p", text: "Pretending otherwise would be dangerous." },
-        { type: "p", text: "The design objective was different:" },
-        {
-          type: "quote",
-          text: "Expose complexity when the customer needs to reason about it, and absorb it when they don't.",
-        },
-        {
-          type: "p",
-          text: "Quick Setup made the simple path genuinely simple without removing the deeper model required by expert users.",
-        },
-        { type: "h3", text: "What I took from the project" },
-        {
-          type: "p",
-          text: "Complexity isn't inherently bad. **Unnecessary exposure to complexity is.**",
-        },
-        {
-          type: "p",
-          text: "In infrastructure products, the designer's job isn't to make the system look simple. It's to understand the system deeply enough to know what the customer must understand, what the customer may want to understand, and what the product should handle for them.",
+          type: "figures",
+          figures: [
+            {
+              src: "/media/aws-quick-setup/configuration-library.png",
+              alt: "Systems Manager configuration library screen with a search field, popular labels filter and cards for Host Management, Application Management, Resource Management, Agent installation, Machine learning operational monitoring and Compliance Management.",
+              caption:
+                "The configuration library: capabilities presented as configurations an operator can find, compare and provision.",
+              width: 1024,
+              height: 951,
+              theme: "dark",
+            },
+            {
+              src: "/media/aws-quick-setup/configuration-detail.png",
+              alt: "Application Manager configuration detail panel describing who the configuration is for, what will be provisioned, and the benefits, with screenshots of the resulting dashboards.",
+              caption:
+                "Configuration detail: what a configuration provisions and what it enables, before anything is deployed.",
+              width: 895,
+              height: 1002,
+              theme: "dark",
+            },
+          ],
         },
         {
           type: "p",
-          text: "That distinction has stayed central to how I design enterprise systems ever since.",
-        },
-      ],
-    },
-    {
-      id: "role",
-      nav: "My role",
-      title: "My role",
-      blocks: [
-        {
-          type: "p",
-          text: "Led UX design for product areas within AWS Systems Manager including Application Manager, Fleet Manager, Documents, Patch Manager, Change Manager, and Quick Setup.",
+          text: "Inside a configuration, recommended defaults and advanced control sit on the same page, so an operator can accept AWS guidance or express an exact operational policy.",
         },
         {
-          type: "p",
-          text: "Designed operator-facing experiences across web console and CLI, producing information architecture, terminology, solution proposals, design documentation, and user flows.",
+          type: "figure",
+          figure: {
+            src: "/media/aws-quick-setup/patch-schedule.png",
+            alt: "Quick Setup patch policy form: patch operation set to scan and install, recommended default scanning schedule, custom install schedule with a CRON expression, and options to wait for the first CRON interval and to reboot if needed.",
+            caption:
+              "Scanning and installation: recommended defaults sit beside custom schedules, so an operator can accept a baseline or express an exact CRON window.",
+            width: 1024,
+            height: 565,
+            size: "full",
+            theme: "light",
+          },
         },
         {
-          type: "p",
-          text: "Designed for complex cloud administration use cases involving policy, organizational scope, operational visibility, and action-taking across high-complexity environments.",
+          type: "figure",
+          figure: {
+            src: "/media/aws-quick-setup/patch-baselines.png",
+            alt: "Patch baseline selection listing every supported operating system with a baseline dropdown and baseline ID, three rows highlighted where custom baselines were selected.",
+            caption:
+              "Baseline selection across every supported operating system, with the AWS defaults visible next to the custom baselines an organisation has chosen.",
+            width: 1024,
+            height: 735,
+            size: "full",
+            theme: "light",
+          },
         },
       ],
     },

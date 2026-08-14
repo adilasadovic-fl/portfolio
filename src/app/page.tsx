@@ -16,23 +16,6 @@ export default function HomePage() {
           <p className="measure-wide mt-8 text-lead text-ink-soft">
             {site.hero.standfirst}
           </p>
-
-          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
-            <Link
-              href="/work"
-              className="label inline-flex items-center gap-2 border-b border-ink pb-1 text-ink transition-colors hover:border-accent hover:text-accent"
-            >
-              Selected work
-              <span aria-hidden="true">→</span>
-            </Link>
-            <a
-              href={`mailto:${site.email}`}
-              className="label text-ink-muted transition-colors hover:text-accent"
-            >
-              {site.email}
-            </a>
-            <span className="label text-ink-faint">{site.location}</span>
-          </div>
         </Container>
       </section>
 
