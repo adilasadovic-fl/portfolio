@@ -526,6 +526,48 @@ export const securityMode: Project = {
         },
       ],
     },
-
+    {
+      id: "outcome-glimpses",
+      nav: "Outcome glimpses",
+      title: "Where governance and remediation show up",
+      blocks: [
+        {
+          type: "figure",
+          figure: {
+            src: "/media/security-mode/admin-overview-table.png",
+            alt: "Enterprise Guard admin view for Security Mode showing boards in Security Mode, a false-match count, and a table of boards with creator, current classification, previous classification, false matches and last activity.",
+            caption:
+              "The admin surface: which boards are protected, how classification changed, and where false matches are accumulating.",
+            width: 3456,
+            height: 1986,
+            size: "full",
+            theme: "light",
+          },
+        },
+        {
+          type: "figures",
+          figures: [
+            {
+              src: "/media/security-mode/match-details-panel.png",
+              alt: "Content remediation panel on a protected board showing match details for a privacy-related finding, including status, detection date, pattern type, label IDs, and actions to mark as resolved or remove the widget.",
+              caption:
+                "A selected match, in context: what was found, what the system knows about it, and the actions available.",
+              width: 2856,
+              height: 1864,
+              theme: "light",
+            },
+            {
+              src: "/media/security-mode/reclassification-panel.png",
+              alt: "Content remediation panel showing fifteen matches after a board was reclassified from External to Restricted, grouped under Internal and Restricted restrictions applied to the board.",
+              caption:
+                "After reclassification: matches grouped by the restriction that now applies to the board.",
+              width: 2854,
+              height: 1910,
+              theme: "light",
+            },
+          ],
+        },
+      ],
+    },
   ],
 };

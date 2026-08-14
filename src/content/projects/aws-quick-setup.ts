@@ -401,11 +401,7 @@ export const awsQuickSetup: Project = {
         },
         {
           type: "p",
-          text: "I treat those as evidence of the broader direction rather than a causal claim about Quick Setup alone.",
-        },
-        {
-          type: "p",
-          text: "The more important product outcome for this case study is structural:",
+          text: "I treat those as evidence of the broader direction rather than a causal claim about Quick Setup alone, because more important product outcome for this is structural.",
         },
         {
           type: "quote",
