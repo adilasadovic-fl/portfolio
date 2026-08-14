@@ -80,10 +80,7 @@ export const executableCollaboration: Project = {
           type: "p",
           text: "An internal engineering study in 2022 surfaced three recurring frustrations with design collaboration:",
         },
-        {
-          type: "p",
-          text: "**feasibility discussions happened too late, mockups became outdated, and documentation was incomplete.**",
-        },
+        { type: "quote", text: "feasibility discussions happened too late, mockups became outdated, and documentation was incomplete." },
         {
           type: "p",
           text: "Three years later, a workshop across design and engineering produced almost the same signal.",
@@ -177,7 +174,7 @@ export const executableCollaboration: Project = {
         {
           type: "decision",
           label: "01",
-          title: "Creation — build the interaction instead of only describing it",
+          title: "Creation",
           blocks: [
             { type: "p", text: "Designers work directly in code with AI assistance." },
             {
@@ -193,7 +190,7 @@ export const executableCollaboration: Project = {
         {
           type: "decision",
           label: "02",
-          title: "Source of truth — version the work and its reasoning",
+          title: "Source of truth",
           blocks: [
             { type: "p", text: "Running prototypes live in a shared Git repository." },
             { type: "p", text: "Changes have history." },
@@ -208,7 +205,7 @@ export const executableCollaboration: Project = {
         {
           type: "decision",
           label: "03",
-          title: "Render & review — review the same thing that changed",
+          title: "Render & review",
           blocks: [
             { type: "p", text: "Every pull request creates a live preview." },
             {
@@ -229,7 +226,7 @@ export const executableCollaboration: Project = {
         {
           type: "decision",
           label: "04",
-          title: "Communication — generate updates from the work instead of rewriting the work",
+          title: "Communication",
           blocks: [
             {
               type: "p",
@@ -254,7 +251,7 @@ export const executableCollaboration: Project = {
         {
           type: "decision",
           label: "05",
-          title: "Design system — use production components, not visual approximations of them",
+          title: "Design system",
           blocks: [
             {
               type: "p",

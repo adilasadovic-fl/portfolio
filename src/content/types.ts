@@ -59,6 +59,8 @@ export type Project = {
   hero?: Figure;
   sections: CaseSection[];
   status?: string;
+  /** `split` places the project metadata and hero image side-by-side on large screens. */
+  layout?: "split" | "default";
 };
 
 export type OtherWork = {

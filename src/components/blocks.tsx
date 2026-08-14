@@ -49,35 +49,35 @@ function BlockView({ block, tone }: { block: Block; tone: Tone }) {
   switch (block.type) {
     case "lead":
       return (
-        <p className={`measure-wide text-lead ${t.heading}`}>
+        <p className={`max-w-full text-lead ${t.heading}`}>
           <Rich text={block.text} />
         </p>
       );
 
     case "p":
       return (
-        <p className={`measure text-body ${t.body}`}>
+        <p className={`max-w-full text-body ${t.body}`}>
           <Rich text={block.text} />
         </p>
       );
 
     case "h3":
       return (
-        <h3 className={`measure pt-6 text-sub font-medium ${t.heading}`}>
+        <h3 className={`label max-w-full pt-6 ${t.accent}`}>
           <Rich text={block.text} />
         </h3>
       );
 
     case "question":
       return (
-        <p className={`measure text-sub font-medium ${t.heading}`}>
+        <p className={`max-w-full text-sub font-medium ${t.heading}`}>
           <Rich text={block.text} />
         </p>
       );
 
     case "quote":
       return (
-        <blockquote className={`measure-wide border-l-2 pl-5 ${t.accentRule}`}>
+        <blockquote className={`max-w-full border-l-2 pl-5 ${t.accentRule}`}>
           <p className={`text-lead ${t.heading}`}>
             <Rich text={block.text} />
           </p>
@@ -86,7 +86,7 @@ function BlockView({ block, tone }: { block: Block; tone: Tone }) {
 
     case "bullets":
       return (
-        <ul className={`measure space-y-2 text-body ${t.body}`}>
+        <ul className={`max-w-full space-y-2 text-body ${t.body}`}>
           {block.items.map((item) => (
             <li key={item} className="flex gap-3">
               <span aria-hidden="true" className={`mt-[0.7em] h-px w-3 shrink-0 ${t.faint} bg-current`} />
@@ -100,7 +100,7 @@ function BlockView({ block, tone }: { block: Block; tone: Tone }) {
 
     case "stack":
       return (
-        <ul className={`measure-wide divide-y ${t.rule} border-y ${t.rule}`}>
+        <ul className={`max-w-full divide-y ${t.rule} border-y ${t.rule}`}>
           {block.items.map((item) => (
             <li key={item} className={`py-2.5 text-sub font-medium ${t.heading}`}>
               <Rich text={item} />
@@ -120,7 +120,7 @@ function BlockView({ block, tone }: { block: Block; tone: Tone }) {
                 </span>
               ) : null}
               <span
-                className={`label border ${t.rule} px-2.5 py-1.5 ${t.heading} normal-case tracking-normal`}
+                className={`label bg-accent px-2.5 py-1.5 text-white normal-case tracking-normal`}
               >
                 {step}
               </span>
@@ -131,7 +131,7 @@ function BlockView({ block, tone }: { block: Block; tone: Tone }) {
 
     case "axis":
       return (
-        <div className={`measure-wide border-y ${t.rule} py-5`}>
+        <div className={`max-w-full border-y ${t.rule} py-5`}>
           <div className="flex items-center gap-4">
             <span className={`label ${t.heading}`}>{block.left}</span>
             <span aria-hidden="true" className={`h-px flex-1 ${t.rule} border-t`} />
@@ -146,7 +146,7 @@ function BlockView({ block, tone }: { block: Block; tone: Tone }) {
 
     case "defs":
       return (
-        <dl className={`measure-wide divide-y ${t.rule} border-t ${t.rule}`}>
+        <dl className={`max-w-full divide-y ${t.rule} border-t ${t.rule}`}>
           {block.items.map((item) => (
             <div key={item.term} className="grid gap-1 py-5 sm:grid-cols-[13rem_1fr] sm:gap-8">
               <dt className={`text-body font-medium ${t.heading}`}>{item.term}</dt>
@@ -162,7 +162,7 @@ function BlockView({ block, tone }: { block: Block; tone: Tone }) {
       return (
         <div className={`border-t pt-8 ${t.rule}`}>
           <p className={`label ${t.accent}`}>{block.label}</p>
-          <h3 className={`measure-wide mt-3 text-section font-medium ${t.heading}`}>
+          <h3 className={`max-w-full mt-3 text-section font-medium ${t.heading}`}>
             {block.title}
           </h3>
           <div className="mt-6 space-y-5">
@@ -173,7 +173,7 @@ function BlockView({ block, tone }: { block: Block; tone: Tone }) {
 
     case "figure":
       return (
-        <div className={block.figure.size === "full" ? "max-w-[64rem]" : "measure-wide"}>
+        <div className={block.figure.size === "full" ? "max-w-[64rem]" : "max-w-full"}>
           <Figure figure={block.figure} />
         </div>
       );
@@ -193,7 +193,7 @@ function BlockView({ block, tone }: { block: Block; tone: Tone }) {
 
     case "note":
       return (
-        <p className={`measure-wide border-l-2 pl-5 text-[14px] ${t.rule} ${t.muted}`}>
+        <p className={`max-w-full border-l-2 pl-5 text-[14px] ${t.rule} ${t.muted}`}>
           <Rich text={block.text} />
         </p>
       );

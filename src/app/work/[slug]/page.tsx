@@ -61,21 +61,40 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
             <span className="label text-ink-faint">{project.domain}</span>
           </div>
 
-          <h1 className="mt-7 text-display font-medium tracking-tight text-ink">
-            {project.title}
-          </h1>
-          <p className="measure-wide mt-5 text-lead text-ink-soft">{project.subtitle}</p>
+          {project.layout === "split" && project.hero ? (
+            <div className="mt-7 grid gap-10 lg:grid-cols-2 lg:items-start">
+              <div>
+                <h1 className="text-display font-medium tracking-tight text-ink">
+                  {project.title}
+                </h1>
+                <p className="max-w-full mt-5 text-lead text-ink-soft">{project.subtitle}</p>
 
-          <ProjectMetadata
-            project={project}
-            className="mt-12 max-w-[52rem] border-t border-rule pt-8 lg:grid-cols-4"
-          />
-
-          {project.hero ? (
-            <div className="mt-12 lg:mt-16">
-              <Figure figure={project.hero} priority sizes="(min-width: 1024px) 70vw, 100vw" />
+                <ProjectMetadata
+                  project={project}
+                  className="mt-12 border-t border-rule pt-8 sm:grid-cols-1"
+                />
+              </div>
+              <Figure figure={project.hero} priority sizes="(min-width: 1024px) 45vw, 100vw" />
             </div>
-          ) : null}
+          ) : (
+            <>
+              <h1 className="mt-7 text-display font-medium tracking-tight text-ink">
+                {project.title}
+              </h1>
+              <p className="max-w-full mt-5 text-lead text-ink-soft">{project.subtitle}</p>
+
+              <ProjectMetadata
+                project={project}
+                className="mt-12 max-w-[52rem] border-t border-rule pt-8 lg:grid-cols-4"
+              />
+
+              {project.hero ? (
+                <div className="mt-12 lg:mt-16">
+                  <Figure figure={project.hero} priority sizes="(min-width: 1024px) 70vw, 100vw" />
+                </div>
+              ) : null}
+            </>
+          )}
         </Container>
       </header>
 
@@ -106,7 +125,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
 
               <h2
                 id={`${section.id}-heading`}
-                className={`measure-wide mt-5 text-section font-medium tracking-tight ${
+                className={`max-w-full mt-5 text-section font-medium tracking-tight ${
                   night ? "text-paper" : "text-ink"
                 } ${section.title ? "" : "sr-only"}`}
               >
