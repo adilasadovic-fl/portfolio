@@ -9,6 +9,7 @@ import { useCaseNav } from "@/components/case-nav-context";
 const primary = [
   { href: "/work", label: "Work" },
   { href: "/about", label: "About" },
+  { href: "/projects/security-mode-ia-test", label: "sm-testpage" },
 ] as const;
 
 function Identity({ onNavigate }: { onNavigate?: () => void }) {
