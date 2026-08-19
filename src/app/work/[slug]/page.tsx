@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Blocks } from "@/components/blocks";
+import { CaseStudyV2 } from "@/components/case-study-v2";
 import { RegisterCaseNav } from "@/components/case-nav-context";
 import { Container } from "@/components/layout";
 import { Figure } from "@/components/media";
+import { NextProjectNav } from "@/components/next-project-nav";
 import { ProjectMetadata } from "@/components/project-preview";
 import { adjacentProjects, getProject, projects } from "@/content/projects";
 
@@ -22,6 +24,10 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
   const project = getProject(slug);
   if (!project) notFound();
   const { next } = adjacentProjects(project.slug);
+
+  if (project.layout === "v2" && project.v2) {
+    return <CaseStudyV2 project={project} next={next} />;
+  }
 
   return (
     <article>
@@ -57,7 +63,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
         );
       })}
 
-      <section aria-labelledby="next-project" className="mt-28 lg:mt-36"><Container><div className="border-t border-rule pt-8"><h2 id="next-project" className="label text-ink-muted">Next</h2><Link href={`/work/${next.slug}`} className="group mt-5 flex flex-wrap items-baseline gap-x-6 gap-y-2"><span className="text-title font-medium tracking-tight text-ink transition-colors group-hover:text-accent">{next.title}</span><span className="label text-ink-muted">{next.domain}</span><span aria-hidden="true" className="text-ink-faint transition-transform duration-200 group-hover:translate-x-1">→</span></Link></div></Container></section>
+      <NextProjectNav next={next} />
     </article>
   );
 }
