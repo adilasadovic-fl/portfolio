@@ -244,7 +244,7 @@ export default function SecurityModeIaTestPage() {
             <Fact label="Status" value="5-customer private beta → public beta" />
             <Fact
               label="Mandate"
-              value="I identified the gap, built the evidence to prioritize it, and owned the interaction and system model through beta."
+              value="Identified the gap, built the case for prioritization, and owned the system through beta."
             />
           </dl>
 
